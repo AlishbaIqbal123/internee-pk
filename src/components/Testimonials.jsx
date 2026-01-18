@@ -7,35 +7,35 @@ const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
-      name: 'Sarah Johnson',
-      role: 'Software Engineering Intern',
-      company: 'Google',
-      content: 'internee.pk helped me land my dream internship at Google. The platform connected me with opportunities perfectly matched to my skills and interests.',
-      avatar: '👩‍💻'
+      name: 'Kashan Soomro',
+      location: 'Karachi, Pakistan',
+      content: 'Thanks to internee.pk, I grew up my skills here and now I am working as a Flutter Developer in a US company.',
+      avatar: '👨‍💻',
+      rating: 5
     },
     {
       id: 2,
-      name: 'Michael Chen',
-      role: 'Data Science Intern',
-      company: 'Microsoft',
-      content: 'The personalized recommendations and career guidance I received through internee.pk were invaluable. I secured a competitive internship that launched my career.',
-      avatar: '👨‍💻'
+      name: 'Sarah Johnson',
+      location: 'Lahore, Pakistan',
+      content: 'internee.pk helped me land my dream internship. The platform connected me with opportunities perfectly matched to my skills and interests.',
+      avatar: '👩‍💻',
+      rating: 5
     },
     {
       id: 3,
-      name: 'Priya Sharma',
-      role: 'UX Design Intern',
-      company: 'Adobe',
-      content: 'As an international student, finding relevant internships seemed impossible. internee.pk made it easy with its comprehensive database and application support.',
-      avatar: '👩‍🎨'
+      name: 'Ahmed Ali',
+      location: 'Islamabad, Pakistan',
+      content: 'The personalized recommendations and career guidance I received through internee.pk were invaluable. I secured a competitive internship that launched my career.',
+      avatar: '👨‍💻',
+      rating: 5
     },
     {
       id: 4,
-      name: 'David Rodriguez',
-      role: 'Business Development Intern',
-      company: 'Amazon',
-      content: 'The interview preparation resources and networking events organized by internee.pk gave me a significant advantage during the application process.',
-      avatar: '👨‍💼'
+      name: 'Fatima Khan',
+      location: 'Karachi, Pakistan',
+      content: 'As a student, finding relevant internships seemed impossible. internee.pk made it easy with its comprehensive database and application support.',
+      avatar: '👩‍🎨',
+      rating: 5
     }
   ];
 
@@ -55,7 +55,8 @@ const Testimonials = () => {
     <section className="testimonials-section" id="testimonials">
       <div className="container">
         <div className="section-header">
-          <h2>Success Stories</h2>
+          <h2>Trusted By Thousands</h2>
+          <h3>Join a Global Community Of Learners Achieving Their Dreams</h3>
           <p>Hear from students who found their perfect internships through internee.pk</p>
         </div>
         
@@ -65,7 +66,10 @@ const Testimonials = () => {
             <p className="testimonial-content">"{testimonials[currentIndex].content}"</p>
             <div className="testimonial-author">
               <h4>{testimonials[currentIndex].name}</h4>
-              <p className="role">{testimonials[currentIndex].role} at {testimonials[currentIndex].company}</p>
+              <p className="location">{testimonials[currentIndex].location}</p>
+              <div className="rating">
+                {'★'.repeat(testimonials[currentIndex].rating)}
+              </div>
             </div>
           </div>
           

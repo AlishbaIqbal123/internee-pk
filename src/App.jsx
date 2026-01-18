@@ -1,25 +1,26 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import Header from './components/Header';
-import HeroSection from './components/HeroSection';
-import About from './components/About';
-import InternshipListings from './components/InternshipListings';
-import Companies from './components/Companies';
-import Students from './components/Students';
-import ContactForm from './components/ContactForm';
-import Footer from './components/Footer';
+import Home from './pages/Home';
+import Dashboard from './pages/Dashboard';
+import Internship from './pages/Internship';
+import JobPortal from './pages/JobPortal';
+import GraduateProgram from './pages/GraduateProgram';
+import StudentAmbassador from './pages/StudentAmbassador';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <HeroSection />
-      <About />
-      <InternshipListings />
-      <Companies />
-      <Students />
-      <ContactForm />
-      <Footer />
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/internship" element={<Internship />} />
+          <Route path="/jobs/public" element={<JobPortal />} />
+          <Route path="/graduateprogram" element={<GraduateProgram />} />
+          <Route path="/studentambassadors" element={<StudentAmbassador />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

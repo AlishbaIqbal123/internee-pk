@@ -22,11 +22,20 @@
   align-items: center;
 }
 
+.logo {
+  text-decoration: none;
+}
+
 .logo h2 {
-  color: #ff69b4;
+  color: #6366f1;
   font-size: 1.8rem;
   font-weight: 700;
   margin: 0;
+  transition: color 0.3s ease;
+}
+
+.logo:hover h2 {
+  color: #8b5cf6;
 }
 
 .hamburger {
@@ -41,7 +50,7 @@
 .hamburger span {
   width: 25px;
   height: 3px;
-  background-color: #ff69b4;
+  background-color: #6366f1;
   margin: 3px 0;
   transition: 0.3s;
   border-radius: 2px;
@@ -70,14 +79,15 @@
 
 .nav-menu a {
   text-decoration: none;
-  color: #ff69b4;
+  color: #6366f1;
   font-weight: 500;
   transition: color 0.3s ease;
   position: relative;
 }
 
-.nav-menu a:hover {
-  color: #ffb6c1;
+.nav-menu a:hover,
+.nav-menu a.active {
+  color: #8b5cf6;
 }
 
 .nav-menu a::after {
@@ -87,11 +97,12 @@
   height: 2px;
   bottom: -5px;
   left: 0;
-  background-color: #ffb6c1;
+  background-color: #8b5cf6;
   transition: width 0.3s ease;
 }
 
-.nav-menu a:hover::after {
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
   width: 100%;
 }
 
@@ -118,24 +129,27 @@
 
 .btn-login {
   background-color: transparent;
-  color: #ff69b4;
-  border: 2px solid #ff69b4;
+  color: #6366f1;
+  border: 2px solid #6366f1;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .btn-login:hover {
-  background-color: #ff69b4;
+  background-color: #6366f1;
   color: white;
 }
 
 .btn-signup {
-  background-color: #ff69b4;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
   color: white;
-  border: 2px solid #ff69b4;
+  border: 2px solid transparent;
 }
 
 .btn-signup:hover {
-  background-color: transparent;
-  color: #ff69b4;
+  background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
 
 /* Mobile Responsive */

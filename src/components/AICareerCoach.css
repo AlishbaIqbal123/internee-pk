@@ -1,0 +1,197 @@
+.ai-career-coach-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #fffaf0 0%, #fff0f5 100%);
+}
+
+.ai-career-coach-section .section-header {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 4rem;
+}
+
+.ai-career-coach-section .section-header h2 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.ai-career-coach-section .section-header p {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: #666;
+  line-height: 1.8;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.feature-card {
+  background: white;
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(255, 105, 180, 0.1);
+  transition: all 0.3s ease;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #ff69b4 0%, #ff5ca8 100%);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(255, 105, 180, 0.2);
+}
+
+.feature-card:hover::before {
+  transform: scaleX(1);
+}
+
+.feature-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.feature-card h3 {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.feature-card p {
+  color: #666;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.monetize-section {
+  text-align: center;
+  background: linear-gradient(135deg, #ff69b4 0%, #ff5ca8 100%);
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  color: white;
+  margin: 4rem 0;
+}
+
+.monetize-section h3 {
+  font-size: clamp(1.8rem, 3vw, 2.3rem);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.monetize-section h4 {
+  font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+  margin-bottom: 1rem;
+  font-weight: 600;
+  opacity: 0.95;
+}
+
+.monetize-section p {
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  line-height: 1.7;
+  opacity: 0.95;
+}
+
+.why-choose-section {
+  margin-top: 4rem;
+}
+
+.why-choose-section h3 {
+  text-align: center;
+  font-size: clamp(1.8rem, 3vw, 2.3rem);
+  color: #333;
+  margin-bottom: 3rem;
+  font-weight: 700;
+}
+
+.why-choose-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.why-choose-card {
+  background: white;
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(255, 105, 180, 0.1);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.why-choose-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(255, 105, 180, 0.2);
+}
+
+.why-choose-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.why-choose-card h4 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.why-choose-card p {
+  color: #666;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.fade-in {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .ai-career-coach-section {
+    padding: 60px 0;
+  }
+
+  .features-grid,
+  .why-choose-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .feature-card,
+  .why-choose-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .monetize-section {
+    padding: 2.5rem 1.5rem;
+  }
+}
+

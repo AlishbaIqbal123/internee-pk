@@ -20,17 +20,18 @@ body {
   padding: 0 2rem;
 }
 
-/* Pastel Color Variables */
+/* Color Variables - Matching Internee.pk */
 :root {
-  --primary-color: #ff69b4; /* Pink */
-  --secondary-color: #ffb6c1; /* Light Pink */
-  --accent-color: #ffc0cb; /* Pink */
-  --background-light: #fffaf0; /* Floral White */
-  --background-dark: #fff0f5; /* Lavender Blush */
-  --text-dark: #333;
-  --text-light: #666;
+  --primary-color: #6366f1; /* Indigo */
+  --secondary-color: #8b5cf6; /* Purple */
+  --accent-color: #a78bfa; /* Light Purple */
+  --background-light: #f8f9fa; /* Light Gray */
+  --background-dark: #f1f5f9; /* Lighter Gray */
+  --text-dark: #212529;
+  --text-light: #6c757d;
   --white: #ffffff;
-  --shadow: 0 5px 15px rgba(255, 105, 180, 0.1);
+  --shadow: 0 5px 15px rgba(99, 102, 241, 0.1);
+  --gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
 }
 
 /* Responsive Typography */
@@ -80,22 +81,91 @@ button {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--secondary-color);
+  background: var(--primary-color);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--primary-color);
+  background: var(--secondary-color);
 }
 
 /* Animation Classes */
 .fade-in {
-  animation: fadeIn 0.5s ease-in;
+  animation: fadeIn 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.fade-in.visible {
+  opacity: 1;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { 
+    opacity: 0; 
+    transform: translateY(30px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Smooth transitions for interactive elements */
+button, a, input, textarea {
+  transition: all 0.3s ease;
+}
+
+/* Hover effects */
+button:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+button:active:not(:disabled) {
+  transform: translateY(0);
 }
 
 /* Utility Classes */
