@@ -1,6 +1,6 @@
 .contact-section {
   padding: 6rem 0;
-  background-color: #fffaf0;
+  background-color: #1a1a1a;
 }
 
 .contact-container {
@@ -27,7 +27,7 @@
 }
 
 .info-content h3 {
-  color: #ff69b4;
+  color: #00FF00;
   margin: 0 0 0.5rem 0;
   font-size: 1.3rem;
 }
@@ -54,25 +54,25 @@
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 600;
-  color: #ff69b4;
+  color: #00FF00;
 }
 
 .form-group input,
 .form-group textarea {
   width: 100%;
   padding: 0.9rem;
-  border: 2px solid #ffd1dc;
+  border: 2px solid #00FF00;
   border-radius: 8px;
   font-size: 1rem;
   transition: border-color 0.3s ease;
-  background-color: #fff5f7;
+  background-color: #1a1a1a;
   box-sizing: border-box;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #ff69b4;
+  border-color: #00FF00;
 }
 
 .form-group input.error,
@@ -100,7 +100,7 @@
 .btn-submit {
   width: 100%;
   padding: 1rem;
-  background-color: #ff69b4;
+  background-color: #00FF00;
   color: white;
   border: none;
   border-radius: 8px;
@@ -111,7 +111,7 @@
 }
 
 .btn-submit:hover:not(:disabled) {
-  background-color: #ff5ca8;
+  background-color: #00E600;
   transform: translateY(-2px);
 }
 

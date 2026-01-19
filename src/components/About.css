@@ -12,7 +12,7 @@
 
 .about-text h2 {
   font-size: 2.5rem;
-  color: #ff69b4;
+  color: #00FF00;
   margin-bottom: 1.5rem;
 }
 
@@ -30,7 +30,7 @@
 }
 
 .stat-card {
-  background: linear-gradient(135deg, #fff0f5 0%, #ffeef3 100%);
+  background: #1a1a1a;
   padding: 1.8rem;
   border-radius: 12px;
   text-align: center;
@@ -41,7 +41,7 @@
 .stat-number {
   font-size: 2rem;
   font-weight: 700;
-  color: #ff69b4;
+  color: #00FF00;
   margin-bottom: 0.5rem;
 }
 

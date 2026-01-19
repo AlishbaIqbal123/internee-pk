@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './ProfessionalDevelopment.css';
 
 const ProfessionalDevelopment = () => {
@@ -141,8 +142,8 @@ const ProfessionalDevelopment = () => {
           <h3>Begin Your Professional Journey with <strong>Internee.pk</strong></h3>
           <p>Join our <strong>virtual internships</strong> program and transform your career prospects with hands-on experience and expert guidance.</p>
           <div className="cta-buttons">
-            <button className="btn-primary">Explore Opportunities</button>
-            <button className="btn-secondary">View Programs</button>
+            <Link to="/internship" className="btn-primary">Explore Opportunities</Link>
+            <Link to="/graduateprogram" className="btn-secondary">View Programs</Link>
           </div>
         </div>
       </div>
@@ -151,4 +152,5 @@ const ProfessionalDevelopment = () => {
 };
 
 export default ProfessionalDevelopment;
+
 

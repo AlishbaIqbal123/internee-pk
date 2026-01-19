@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './HowItWorks.css';
 
 const HowItWorks = () => {
@@ -67,7 +68,7 @@ const HowItWorks = () => {
         </div>
 
         <div className={`cta-section ${isVisible ? 'fade-in' : ''}`}>
-          <button className="btn-cta">Get Started Now</button>
+          <Link to="/dashboard" className="btn-cta">Get Started Now</Link>
         </div>
       </div>
     </section>
@@ -75,4 +76,5 @@ const HowItWorks = () => {
 };
 
 export default HowItWorks;
+
 

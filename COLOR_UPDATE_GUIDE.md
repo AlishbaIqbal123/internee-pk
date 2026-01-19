@@ -71,3 +71,4 @@ Update background gradients:
 - `linear-gradient(135deg, #ff69b4 0%, #ff5ca8 100%)` → `linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)`
 - Light backgrounds can stay as is or use `#f8f9fa` for consistency
 
+

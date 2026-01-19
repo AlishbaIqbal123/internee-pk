@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './FinalCTA.css';
 
 const FinalCTA = () => {
@@ -44,11 +45,11 @@ const FinalCTA = () => {
           <p>Take the first step toward a successful career with Internee.pk. Explore top internships, gain hands-on experience, and earn a valuable certificate.</p>
           
           <div className="cta-buttons">
-            <a href="#graduate-program" className="btn-primary">Get Started Now</a>
-            <a href="#internship" className="btn-secondary">
+            <Link to="/graduateprogram" className="btn-primary">Get Started Now</Link>
+            <Link to="/internship" className="btn-secondary">
               Explore Internships
               <span className="btn-icon">→</span>
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -66,4 +67,5 @@ const FinalCTA = () => {
 };
 
 export default FinalCTA;
+
 

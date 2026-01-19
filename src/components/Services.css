@@ -1,6 +1,6 @@
 .services-section {
   padding: 6rem 0;
-  background-color: #fffaf0;
+  background-color: #1a1a1a;
 }
 
 .section-header {
@@ -10,7 +10,7 @@
 
 .section-header h2 {
   font-size: 2.5rem;
-  color: #ff69b4;
+  color: #00FF00;
   margin-bottom: 1rem;
 }
 
@@ -49,7 +49,7 @@
 
 .service-card h3 {
   font-size: 1.5rem;
-  color: #ff69b4;
+  color: #00FF00;
   margin-bottom: 1rem;
 }
 

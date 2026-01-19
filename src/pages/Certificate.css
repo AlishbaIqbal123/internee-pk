@@ -1,0 +1,85 @@
+.certificate-page {
+  min-height: 100vh;
+  background: #1a1a1a;
+  display: flex;
+  color: #ffffff;
+}
+
+.certificate-main {
+  flex: 1;
+  margin-left: 280px;
+  padding: 2rem;
+  background: #1a1a1a;
+  min-height: 100vh;
+}
+
+.certificate-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.certificate-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.header-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: #2d2d2d;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  transition: all 0.3s ease;
+}
+
+.icon-btn:hover {
+  background: #3d3d3d;
+}
+
+.user-profile-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #8b5cf6;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.certificate-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+}
+
+.empty-message {
+  color: #ffffff;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .certificate-main {
+    margin-left: 0;
+    padding: 1rem;
+  }
+}
+

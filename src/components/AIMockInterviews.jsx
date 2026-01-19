@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './AIMockInterviews.css';
 
 const AIMockInterviews = () => {
@@ -68,7 +69,7 @@ const AIMockInterviews = () => {
         <div className={`section-header ${isVisible ? 'fade-in' : ''}`}>
           <h2>AI Mock Interview Platform for Virtual Internships in Pakistan</h2>
           <p>Prepare for <strong>technical</strong>, <strong>marketing</strong>, or <strong>business interviews</strong> with our AI-powered mock interview system. Join <strong>Internee.pk's virtual internship program</strong> to get unlimited access, real-time feedback, and role-specific practice.</p>
-          <button className="btn-apply">Apply Now for Virtual Internship</button>
+          <Link to="/aimock/dashboard" className="btn-apply">Apply Now for Virtual Internship</Link>
         </div>
 
         <div className="features-grid">
@@ -107,4 +108,5 @@ const AIMockInterviews = () => {
 };
 
 export default AIMockInterviews;
+
 

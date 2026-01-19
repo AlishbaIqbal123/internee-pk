@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './TechInstructor.css';
 
 const TechInstructor = () => {
@@ -59,7 +60,7 @@ const TechInstructor = () => {
         <div className={`section-header ${isVisible ? 'fade-in' : ''}`}>
           <h2>Tech Instructor or Content Creator?</h2>
           <h3>Create in Your Native Language & Start Earning</h3>
-          <button className="btn-primary-instructor">Start Teaching Today</button>
+          <Link to="/dashboard" className="btn-primary-instructor">Start Teaching Today</Link>
         </div>
 
         <div className="benefits-grid">
@@ -82,4 +83,5 @@ const TechInstructor = () => {
 };
 
 export default TechInstructor;
+
 

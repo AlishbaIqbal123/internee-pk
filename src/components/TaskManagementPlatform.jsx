@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './TaskManagementPlatform.css';
 
 const TaskManagementPlatform = () => {
@@ -86,7 +87,7 @@ const TaskManagementPlatform = () => {
         <div className={`cta-section ${isVisible ? 'fade-in' : ''}`}>
           <h3>Ready to Build Your Professional Portfolio with <strong>internee.pk</strong>?</h3>
           <p>Join our <strong>virtual internships</strong> and get access to industry-standard tasks that will help you build a remarkable portfolio, only at <strong>internee.pk</strong>.</p>
-          <button className="btn-cta">Start Your Journey Now</button>
+          <Link to="/dashboard/assignments" className="btn-cta">Start Your Journey Now</Link>
         </div>
       </div>
     </section>
@@ -94,4 +95,5 @@ const TaskManagementPlatform = () => {
 };
 
 export default TaskManagementPlatform;
+
 

@@ -5,130 +5,112 @@ import './JobPortal.css';
 
 const JobPortal = () => {
   const [searchQuery, setSearchQuery] = useState('');
-  const [filters, setFilters] = useState({
-    location: '',
-    type: '',
-    experience: ''
-  });
+  const [sortBy, setSortBy] = useState('Latest');
 
   const jobs = [
     {
       id: 1,
-      title: 'Frontend Developer',
-      company: 'Tech Solutions Inc.',
+      title: 'Business Development Intern Internship in...',
+      company: 'DigixSoft',
       location: 'Karachi, Pakistan',
-      type: 'Full-time',
-      experience: '2-3 years',
-      posted: '2 days ago'
+      date: 'Jan 19, 2026',
+      description: 'Business Development Intern Internship in DigixSoft Karachi, Pakistan'
     },
     {
       id: 2,
-      title: 'React Developer',
-      company: 'Digital Innovations',
-      location: 'Lahore, Pakistan',
-      type: 'Full-time',
-      experience: '1-2 years',
-      posted: '5 days ago'
+      title: 'Client Acquisition Intern Internship in...',
+      company: 'DigixSoft',
+      location: 'Karachi, Pakistan',
+      date: 'Jan 19, 2026',
+      description: 'Client Acquisition Intern Internship in DigixSoft Karachi, Pakistan'
     },
     {
       id: 3,
-      title: 'UI/UX Designer',
-      company: 'Creative Studio',
-      location: 'Islamabad, Pakistan',
-      type: 'Part-time',
-      experience: '1-3 years',
-      posted: '1 week ago'
+      title: 'Graphic Designer Job in The D...',
+      company: 'The Design Brewery',
+      location: 'Karachi, Pakistan',
+      date: 'Jan 19, 2026',
+      description: 'Graphic Designer Job in The Design Brewery Karachi, Pakistan'
+    },
+    {
+      id: 4,
+      title: 'Sales Executive Job in Hims Technology P...',
+      company: 'Hims Technology Pvt Ltd.',
+      location: 'Karachi, Pakistan',
+      date: 'Jan 19, 2026',
+      description: 'Sales Executive Job in Hims Technology Pvt Ltd. Karachi, Pakistan'
+    },
+    {
+      id: 5,
+      title: 'Junior Media Buyer Job in The Art Expert...',
+      company: 'The Art Expert',
+      location: 'Karachi, Pakistan',
+      date: 'Jan 19, 2026',
+      description: 'Junior Media Buyer Job in The Art Expert Karachi, Pakistan'
+    },
+    {
+      id: 6,
+      title: 'Professional Video Editor Job in Rizing Te...',
+      company: 'Rizing Tech',
+      location: 'Karachi, Pakistan',
+      date: 'Jan 19, 2026',
+      description: 'Professional Video Editor Job in Rizing Tech Karachi, Pakistan'
     }
   ];
 
   return (
     <div className="job-portal-page">
       <Header />
-      <div className="job-portal-hero">
+      <div className="job-portal-content">
         <div className="container">
-          <h1>Find Your Dream Job</h1>
-          <p>Browse through hundreds of job opportunities from top companies</p>
-          
-          <div className="search-section">
+          <div className="job-portal-header">
+            <h1>Job Portal</h1>
+            <p className="tagline">Find your dream job today</p>
+          </div>
+
+          <div className="search-filter-section">
             <div className="search-box">
+              <span className="search-icon">🔍</span>
               <input
                 type="text"
-                placeholder="Search jobs, companies, or keywords..."
+                placeholder="Search jobs by title or keywords..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
-              <button className="search-btn">🔍</button>
             </div>
-            
-            <div className="filters">
+            <button className="btn-search">Search</button>
+            <div className="sort-dropdown-wrapper">
               <select
-                value={filters.location}
-                onChange={(e) => setFilters({...filters, location: e.target.value})}
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value)}
+                className="sort-dropdown"
               >
-                <option value="">All Locations</option>
-                <option value="karachi">Karachi</option>
-                <option value="lahore">Lahore</option>
-                <option value="islamabad">Islamabad</option>
-              </select>
-              
-              <select
-                value={filters.type}
-                onChange={(e) => setFilters({...filters, type: e.target.value})}
-              >
-                <option value="">All Types</option>
-                <option value="full-time">Full-time</option>
-                <option value="part-time">Part-time</option>
-                <option value="contract">Contract</option>
-              </select>
-              
-              <select
-                value={filters.experience}
-                onChange={(e) => setFilters({...filters, experience: e.target.value})}
-              >
-                <option value="">All Experience Levels</option>
-                <option value="entry">Entry Level</option>
-                <option value="mid">Mid Level</option>
-                <option value="senior">Senior Level</option>
+                <option value="Latest">Latest</option>
+                <option value="Oldest">Oldest</option>
+                <option value="Title">Title</option>
               </select>
             </div>
           </div>
-        </div>
-      </div>
 
-      <div className="jobs-content">
-        <div className="container">
-          <div className="jobs-header">
-            <h2>Available Jobs</h2>
-            <p>{jobs.length} jobs found</p>
-          </div>
-
-          <div className="jobs-list">
+          <div className="jobs-grid">
             {jobs.map((job) => (
               <div key={job.id} className="job-card">
-                <div className="job-header">
-                  <h3>{job.title}</h3>
-                  <span className="job-type">{job.type}</span>
-                </div>
-                <div className="job-company">{job.company}</div>
-                <div className="job-details">
-                  <span>📍 {job.location}</span>
-                  <span>💼 {job.experience}</span>
-                  <span>📅 {job.posted}</span>
-                </div>
-                <div className="job-actions">
-                  <button className="btn-apply">Apply Now</button>
-                  <button className="btn-save">Save</button>
-                </div>
+                <button className="bookmark-btn">🔖</button>
+                <div className="job-date">{job.date}</div>
+                <h3 className="job-title">{job.title}</h3>
+                <p className="job-description">{job.description}</p>
+                <button className="btn-apply">
+                  Apply
+                  <span className="external-icon">↗</span>
+                </button>
               </div>
             ))}
           </div>
         </div>
       </div>
-
       <Footer />
     </div>
   );
 };
 
 export default JobPortal;
-

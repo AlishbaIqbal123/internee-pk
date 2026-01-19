@@ -20,23 +20,23 @@
 
 .filter-group label {
   font-weight: 600;
-  color: #ff69b4;
+  color: #00FF00;
 }
 
 .filter-group input,
 .filter-group select {
   padding: 0.8rem;
-  border: 2px solid #ffd1dc;
+  border: 2px solid #00FF00;
   border-radius: 8px;
   font-size: 1rem;
-  background-color: #fff5f7;
+  background-color: #1a1a1a;
   transition: border-color 0.3s ease;
 }
 
 .filter-group input:focus,
 .filter-group select:focus {
   outline: none;
-  border-color: #ff69b4;
+  border-color: #00FF00;
 }
 
 .internships-grid {
@@ -67,7 +67,7 @@
 }
 
 .card-header h3 {
-  color: #ff69b4;
+  color: #00FF00;
   font-size: 1.4rem;
   margin: 0;
   flex: 1;
@@ -75,7 +75,7 @@
 }
 
 .posted {
-  background-color: #ffd1dc;
+  background-color: #2d2d2d;
   color: #c2185b;
   padding: 0.3rem 0.8rem;
   border-radius: 20px;
@@ -123,7 +123,7 @@
 }
 
 .tag.stipend {
-  background-color: #fff3e0;
+  background-color: #2d2d2d;
   color: #f57c00;
 }
 
@@ -149,23 +149,23 @@
 }
 
 .btn-apply {
-  background-color: #ff69b4;
+  background-color: #00FF00;
   color: white;
 }
 
 .btn-apply:hover {
-  background-color: #ff5ca8;
+  background-color: #00E600;
   transform: translateY(-2px);
 }
 
 .btn-details {
   background-color: transparent;
-  color: #ff69b4;
-  border: 2px solid #ff69b4;
+  color: #00FF00;
+  border: 2px solid #00FF00;
 }
 
 .btn-details:hover {
-  background-color: #ff69b4;
+  background-color: #00FF00;
   color: white;
   transform: translateY(-2px);
 }

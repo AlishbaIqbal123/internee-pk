@@ -1,6 +1,6 @@
 .dream-internship-section {
   padding: 60px 0;
-  background: linear-gradient(135deg, #fffaf0 0%, #fff0f5 100%);
+  background: #1a1a1a;
   text-align: center;
 }
 
@@ -13,7 +13,7 @@
   display: block;
   font-size: 0.9rem;
   font-weight: 600;
-  color: #ff69b4;
+  color: #00FF00;
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 1.5rem;
@@ -27,8 +27,8 @@
 }
 
 .dream-internship-section h1 .highlight {
-  color: #ff69b4;
-  background: linear-gradient(135deg, #ff69b4 0%, #ff5ca8 100%);
+  color: #00FF00;
+  background: linear-gradient(135deg, #00FF00 0%, #00E600 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -54,4 +54,5 @@
     padding: 50px 0;
   }
 }
+
 

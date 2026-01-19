@@ -1,6 +1,6 @@
 .final-cta-section {
   padding: 80px 0;
-  background: linear-gradient(135deg, #fff0f5 0%, #ffe4e1 100%);
+  background: #1a1a1a;
   text-align: center;
 }
 
@@ -13,7 +13,7 @@
   display: block;
   font-size: 0.9rem;
   font-weight: 600;
-  color: #ff69b4;
+  color: #00FF00;
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 1.5rem;
@@ -57,24 +57,24 @@
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #ff69b4 0%, #ff5ca8 100%);
+  background: linear-gradient(135deg, #00FF00 0%, #00E600 100%);
   color: white;
-  box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 255, 0, 0.3);
 }
 
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(255, 105, 180, 0.4);
+  box-shadow: 0 6px 20px rgba(0, 255, 0, 0.4);
 }
 
 .btn-secondary {
   background: transparent;
-  color: #ff69b4;
-  border: 2px solid #ff69b4;
+  color: #00FF00;
+  border: 2px solid #00FF00;
 }
 
 .btn-secondary:hover {
-  background: #ff69b4;
+  background: #00FF00;
   color: white;
   transform: translateY(-3px);
 }
@@ -94,7 +94,7 @@
   gap: 2rem;
   margin-top: 4rem;
   padding-top: 3rem;
-  border-top: 1px solid rgba(255, 105, 180, 0.2);
+  border-top: 1px solid rgba(0, 255, 0, 0.2);
 }
 
 .stat-item {
@@ -105,7 +105,7 @@
   display: block;
   font-size: 2.5rem;
   font-weight: 700;
-  color: #ff69b4;
+  color: #00FF00;
   margin-bottom: 0.5rem;
 }
 
@@ -149,4 +149,5 @@
     gap: 1.5rem;
   }
 }
+
 

@@ -1,31 +1,44 @@
 .internship-page {
   min-height: 100vh;
-  background: #f8f9fa;
+  background: #1a1a1a;
+  color: #ffffff;
 }
 
 .internship-hero {
-  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-  color: white;
+  background: linear-gradient(135deg, #00FF00 0%, #00E600 100%);
+  color: #000000;
   padding: 100px 0 60px;
   text-align: center;
   margin-top: 70px;
+}
+
+.trending-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
 }
 
 .internship-hero h1 {
   font-size: clamp(2.5rem, 5vw, 3.5rem);
   margin-bottom: 1rem;
   font-weight: 700;
+  color: #000000;
 }
 
 .internship-hero p {
   font-size: clamp(1rem, 2vw, 1.2rem);
   margin-bottom: 2rem;
-  opacity: 0.95;
+  opacity: 0.9;
+  color: rgba(0, 0, 0, 0.8);
 }
 
 .btn-primary {
-  background: white;
-  color: #6366f1;
+  background: #000000;
+  color: #00FF00;
   padding: 1rem 2.5rem;
   border: none;
   border-radius: 30px;
@@ -34,11 +47,14 @@
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  display: inline-block;
 }
 
 .btn-primary:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  background: #1a1a1a;
 }
 
 .hero-subtitle {
@@ -61,19 +77,19 @@
 
 .section-header h2 {
   font-size: clamp(2rem, 4vw, 2.5rem);
-  color: #212529;
+  color: #ffffff;
   margin-bottom: 1rem;
   font-weight: 700;
 }
 
 .section-header p {
   font-size: clamp(1rem, 2vw, 1.1rem);
-  color: #6c757d;
+  color: #9ca3af;
   margin-bottom: 0.5rem;
 }
 
 .loading-text {
-  color: #6366f1;
+  color: #00FF00;
   font-style: italic;
 }
 
@@ -85,17 +101,18 @@
 }
 
 .category-card {
-  background: white;
+  background: #2d2d2d;
   padding: 2.5rem 2rem;
   border-radius: 15px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   text-align: center;
   transition: all 0.3s ease;
+  color: #ffffff;
 }
 
 .category-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 255, 0, 0.2);
 }
 
 .category-icon {
@@ -105,31 +122,34 @@
 
 .category-card h3 {
   font-size: 1.5rem;
-  color: #212529;
+  color: #ffffff;
   margin-bottom: 0.5rem;
   font-weight: 700;
 }
 
-.category-count {
-  color: #6c757d;
+.category-description {
+  color: #9ca3af;
   margin-bottom: 1.5rem;
   font-size: 0.95rem;
 }
 
 .btn-explore {
-  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-  color: white;
+  background: #00FF00;
+  color: #000000;
   padding: 0.75rem 2rem;
   border: none;
   border-radius: 25px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .btn-explore:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 255, 0, 0.3);
+  background: #00E600;
 }
 
 .stats-section {
@@ -140,22 +160,23 @@
 }
 
 .stat-card {
-  background: white;
+  background: #2d2d2d;
   padding: 2rem;
   border-radius: 15px;
   text-align: center;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  color: #ffffff;
 }
 
 .stat-card h3 {
   font-size: 3rem;
-  color: #6366f1;
+  color: #00FF00;
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
 
 .stat-card p {
-  color: #6c757d;
+  color: #9ca3af;
   font-size: 1rem;
 }
 
@@ -172,4 +193,5 @@
     grid-template-columns: 1fr;
   }
 }
+
 
