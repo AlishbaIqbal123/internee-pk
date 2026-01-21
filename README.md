@@ -103,9 +103,5 @@ npm run dev
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Support
-For support, please contact [your-email@example.com] or open an issue in the repository.
+For support, please contact [i.alishba1342@gmail.com] or open an issue in the repository.
 
-## Acknowledgments
-- Thanks to all contributors who helped develop this platform
-- Special recognition to the design team for the UI/UX
-- React community for excellent documentation and resources
