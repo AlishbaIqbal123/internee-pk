@@ -1,5 +1,7 @@
 import React, { useMemo, useRef, useState } from 'react';
+import { FaUser } from 'react-icons/fa';
 import DashboardSidebar from '../components/DashboardSidebar';
+import DashboardHeaderActions from '../components/DashboardHeaderActions';
 import './Dashboard.css';
 
 const Dashboard = () => {
@@ -7,16 +9,46 @@ const Dashboard = () => {
   const [isTooltipVisible, setIsTooltipVisible] = useState(false);
   const svgRef = useRef(null);
 
+  // Mock user tasks data - in real app, this would come from API
+  const userTasks = [
+    { id: 1, title: 'Chatbot powered by OpenAI API or Gemini', status: 'assigned' },
+    { id: 2, title: 'Random Quote Generator', status: 'assigned' },
+    { id: 3, title: 'Notes App (Like Google Keep)', status: 'assigned' },
+    { id: 4, title: 'E-Commerce Platform', status: 'assigned' }
+  ];
+
+  // Check if user has completed any tasks
+  const hasCompletedTasks = userTasks.some(task => task.status === 'completed');
+  const completedTasksCount = userTasks.filter(task => task.status === 'completed').length;
+  const totalTasks = userTasks.length;
+
   const progressData = useMemo(
-    () => [
-      { label: 'Aug', tasks: 2, badges: 1, interviews: 0 },
-      { label: 'Sep', tasks: 3, badges: 2, interviews: 1 },
-      { label: 'Oct', tasks: 4, badges: 3, interviews: 2 },
-      { label: 'Nov', tasks: 3, badges: 2, interviews: 1 },
-      { label: 'Dec', tasks: 4, badges: 3, interviews: 2 },
-      { label: 'Jan', tasks: 2, badges: 1, interviews: 1 }
-    ],
-    []
+    () => {
+      // Only show graph if user has completed tasks
+      if (!hasCompletedTasks || completedTasksCount === 0) {
+        return [];
+      }
+      
+      // Generate realistic progress data based on completed tasks
+      const months = ['Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan'];
+      const currentMonthIndex = new Date().getMonth();
+      const startMonthIndex = Math.max(0, currentMonthIndex - 5);
+      
+      return months.slice(startMonthIndex, startMonthIndex + 6).map((month, index) => {
+        // Distribute completed tasks across months
+        const tasksInMonth = index < completedTasksCount ? Math.floor(completedTasksCount / 6) + (index < completedTasksCount % 6 ? 1 : 0) : 0;
+        const badgesInMonth = Math.floor(tasksInMonth / 2);
+        const interviewsInMonth = Math.floor(tasksInMonth / 3);
+        
+        return {
+          label: month,
+          tasks: Math.min(tasksInMonth, 5),
+          badges: Math.min(badgesInMonth, 5),
+          interviews: Math.min(interviewsInMonth, 5)
+        };
+      });
+    },
+    [hasCompletedTasks, completedTasksCount]
   );
 
   const chartConfig = {
@@ -40,15 +72,21 @@ const Dashboard = () => {
     return { x, y };
   };
 
-  const polylinePoints = progressData
-    .map((item, index) => {
-      const { x, y } = getPointForIndex(index, item.tasks);
-      return `${x},${y}`;
-    })
-    .join(' ');
+  const polylinePoints = progressData.length > 0
+    ? progressData
+        .map((item, index) => {
+          const { x, y } = getPointForIndex(index, item.tasks);
+          return `${x},${y}`;
+        })
+        .join(' ')
+    : '';
 
-  const activePoint = getPointForIndex(activeMonthIndex, progressData[activeMonthIndex].tasks);
-  const activeMonth = progressData[activeMonthIndex];
+  const activePoint = progressData.length > 0 && activeMonthIndex < progressData.length
+    ? getPointForIndex(activeMonthIndex, progressData[activeMonthIndex].tasks)
+    : { x: 0, y: 0 };
+  const activeMonth = progressData.length > 0 && activeMonthIndex < progressData.length
+    ? progressData[activeMonthIndex]
+    : { label: '', tasks: 0, badges: 0, interviews: 0 };
 
   const getSvgRelativePoint = (clientX, clientY) => {
     const svg = svgRef.current;
@@ -75,10 +113,14 @@ const Dashboard = () => {
   };
 
   const handleChartMouseMove = (e) => {
+    if (progressData.length === 0) return;
+    
     const rel = getSvgRelativePoint(e.clientX, e.clientY);
     if (!rel) return;
     
     const { nearestIndex, nearestDist } = findNearestPointIndex(rel.x);
+    if (nearestIndex >= progressData.length) return;
+    
     const p = getPointForIndex(nearestIndex, progressData[nearestIndex].tasks);
     const dy = Math.abs(p.y - rel.y);
     const threshold = 50; // Increased threshold for better UX
@@ -102,16 +144,14 @@ const Dashboard = () => {
       <main className="dashboard-main">
         <div className="dashboard-header">
           <h1>Dashboard</h1>
-          <div className="header-actions">
-            <button className="icon-btn">☀️</button>
-            <button className="icon-btn">🔔</button>
-            <div className="user-profile-icon">👤</div>
-          </div>
+          <DashboardHeaderActions />
         </div>
 
         <div className="dashboard-content">
           <div className="welcome-section">
-            <div className="user-avatar-large">👤</div>
+            <div className="user-avatar-large">
+              <FaUser />
+            </div>
             <div className="welcome-text">
               <h2>Welcome, alishba iqbal!</h2>
               <p>Ready to track your progress today?</p>
@@ -122,6 +162,7 @@ const Dashboard = () => {
             <div className="dashboard-left">
               <div className="progress-overview">
                 <h3>Progress Overview</h3>
+                {progressData.length > 0 ? (
                 <div className="progress-chart">
                   <svg
                     ref={svgRef}
@@ -130,6 +171,7 @@ const Dashboard = () => {
                     preserveAspectRatio="xMidYMid meet"
                     onMouseMove={handleChartMouseMove}
                     onMouseLeave={handleChartMouseLeave}
+                    style={{ overflow: 'visible' }}
                   >
                     <defs>
                       <linearGradient id="gridGradient" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -137,8 +179,8 @@ const Dashboard = () => {
                         <stop offset="100%" stopColor="#1a1a1a" />
                       </linearGradient>
                       <linearGradient id="areaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" stopColor="#00FF00" stopOpacity="0.4" />
-                        <stop offset="100%" stopColor="#00FF00" stopOpacity="0.05" />
+                        <stop offset="0%" stopColor="rgb(0, 204, 0)" stopOpacity="0.4" />
+                        <stop offset="100%" stopColor="rgb(0, 204, 0)" stopOpacity="0.05" />
                       </linearGradient>
                     </defs>
                     <rect width={chartConfig.width} height={chartConfig.height} fill="url(#gridGradient)" rx="8" />
@@ -215,7 +257,7 @@ const Dashboard = () => {
                     <polyline 
                       points={polylinePoints} 
                       fill="none" 
-                      stroke="#00FF00" 
+                      stroke="var(--color-primary)" 
                       strokeWidth="3"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -244,8 +286,8 @@ const Dashboard = () => {
                             cx={x}
                             cy={y}
                             r={isActive ? 6 : 4}
-                            fill={isActive ? '#00FF00' : '#ffffff'}
-                            stroke="#00FF00"
+                            fill={isActive ? 'var(--color-primary)' : '#ffffff'}
+                            stroke="var(--color-primary)"
                             strokeWidth={isActive ? '3' : '2'}
                           />
                           {/* Inner dot for active point */}
@@ -261,58 +303,70 @@ const Dashboard = () => {
                       );
                     })}
                     {/* Tooltip */}
-                    {isTooltipVisible && (
-                      <g className="tooltip-group" transform={`translate(${activePoint.x}, ${activePoint.y})`}>
-                        {/* Tooltip background */}
+                    {isTooltipVisible && progressData.length > 0 && (
+                      <g className="tooltip-group">
+                        <defs>
+                          <filter id="tooltip-shadow" x="-50%" y="-50%" width="200%" height="200%">
+                            <feDropShadow dx="0" dy="4" stdDeviation="6" floodColor="rgb(0, 204, 0)" floodOpacity="0.4"/>
+                          </filter>
+                        </defs>
+                        <g transform={`translate(${Math.max(70, Math.min(activePoint.x, chartConfig.width - 70))}, ${Math.max(95, Math.min(activePoint.y - 10, chartConfig.height - 20))})`}>
+                          {/* Tooltip background - larger to prevent cutoff */}
                         <rect
-                          x="-70"
-                          y="-85"
-                          width="140"
-                          height="75"
+                          x="-75"
+                          y="-90"
+                          width="150"
+                          height="80"
                           fill="#1a1a1a"
-                          stroke="#00FF00"
+                          stroke="var(--color-primary)"
                           strokeWidth="2"
                           rx="8"
-                          filter="drop-shadow(0 4px 12px rgba(0, 255, 0, 0.3))"
+                          filter="url(#tooltip-shadow)"
                         />
                         {/* Tooltip arrow */}
                         <polygon
-                          points="0,0 -8,-8 8,-8"
-                          fill="#00FF00"
+                          points="0,0 -10,-10 10,-10"
+                          fill="var(--color-primary)"
                         />
                         {/* Tooltip content */}
                         <text
                           x="0"
-                          y="-60"
-                          fill="#00FF00"
+                          y="-65"
+                          fill="var(--color-primary)"
                           fontSize="13"
                           textAnchor="middle"
                           fontWeight="700"
                         >
                           {activeMonth.label}
                         </text>
-                        <text x="-50" y="-40" fill="#ffffff" fontSize="11" textAnchor="start" fontWeight="600">
-                          Tasks:
-                        </text>
-                        <text x="50" y="-40" fill="#00FF00" fontSize="11" textAnchor="end" fontWeight="700">
-                          {activeMonth.tasks}
-                        </text>
-                        <text x="-50" y="-25" fill="#ffffff" fontSize="11" textAnchor="start" fontWeight="600">
-                          Badges:
-                        </text>
-                        <text x="50" y="-25" fill="#00FF00" fontSize="11" textAnchor="end" fontWeight="700">
-                          {activeMonth.badges}
-                        </text>
-                        <text x="-50" y="-10" fill="#ffffff" fontSize="11" textAnchor="start" fontWeight="600">
-                          Interviews:
-                        </text>
-                        <text x="50" y="-10" fill="#00FF00" fontSize="11" textAnchor="end" fontWeight="700">
-                          {activeMonth.interviews}
-                        </text>
+                          <text x="-55" y="-45" fill="#ffffff" fontSize="11" textAnchor="start" fontWeight="600">
+                            Tasks:
+                          </text>
+                          <text x="55" y="-45" fill="var(--color-primary)" fontSize="11" textAnchor="end" fontWeight="700">
+                            {activeMonth.tasks}
+                          </text>
+                          <text x="-55" y="-30" fill="#ffffff" fontSize="11" textAnchor="start" fontWeight="600">
+                            Badges:
+                          </text>
+                          <text x="55" y="-30" fill="var(--color-primary)" fontSize="11" textAnchor="end" fontWeight="700">
+                            {activeMonth.badges}
+                          </text>
+                          <text x="-55" y="-15" fill="#ffffff" fontSize="11" textAnchor="start" fontWeight="600">
+                            Interviews:
+                          </text>
+                          <text x="55" y="-15" fill="var(--color-primary)" fontSize="11" textAnchor="end" fontWeight="700">
+                            {activeMonth.interviews}
+                          </text>
+                        </g>
                       </g>
                     )}
                   </svg>
                 </div>
+                ) : (
+                  <div className="no-data-message">
+                    <p>No progress data available yet. Complete tasks to see your progress!</p>
+                  </div>
+                )}
               </div>
 
               <div className="achievements-section">
@@ -324,22 +378,20 @@ const Dashboard = () => {
                 <h3>Tasks</h3>
                 <p className="section-subtitle">Keep track of your progress and deadlines.</p>
                 <div className="tasks-list">
-                  <div className="task-item">
-                    <span className="task-title">Chatbot powered by OpenAI API or Gemini</span>
-                    <span className="task-tag assigned">Assigned</span>
-                  </div>
-                  <div className="task-item">
-                    <span className="task-title">Random Quote Generator 🎉</span>
-                    <span className="task-tag assigned">Assigned</span>
-                  </div>
-                  <div className="task-item">
-                    <span className="task-title">Notes App (Like Google Keep) 📝</span>
-                    <span className="task-tag assigned">Assigned</span>
-                  </div>
-                  <div className="task-item">
-                    <span className="task-title">E-Commerce Platform</span>
-                    <span className="task-tag assigned">Assigned</span>
-                  </div>
+                  {userTasks.length === 0 ? (
+                    <div className="no-tasks-message">
+                      <p>No tasks assigned yet. Check back later!</p>
+                    </div>
+                  ) : (
+                    userTasks.map((task) => (
+                      <div key={task.id} className="task-item">
+                        <span className="task-title">{task.title}</span>
+                        <span className={`task-tag ${task.status}`}>
+                          {task.status === 'completed' ? 'Completed' : 'Assigned'}
+                        </span>
+                      </div>
+                    ))
+                  )}
                 </div>
                 <button className="btn-task-portal">Task Portal</button>
               </div>

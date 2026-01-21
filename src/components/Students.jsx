@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaBuilding, FaCompass, FaRocket, FaBriefcase } from 'react-icons/fa';
 import './Students.css';
 
 const Students = () => {
@@ -6,22 +7,22 @@ const Students = () => {
     {
       title: 'Access to Top Companies',
       description: 'Connect with leading companies across Pakistan offering quality internships.',
-      icon: '🏢'
+      icon: FaBuilding
     },
     {
       title: 'Career Guidance',
       description: 'Receive professional mentorship and career guidance from industry experts.',
-      icon: '🧭'
+      icon: FaCompass
     },
     {
       title: 'Skill Development',
       description: 'Enhance your skills through workshops and training programs.',
-      icon: '🚀'
+      icon: FaRocket
     },
     {
       title: 'Job Opportunities',
       description: 'Increase your chances of getting hired after successful internships.',
-      icon: '💼'
+      icon: FaBriefcase
     }
   ];
 
@@ -36,7 +37,7 @@ const Students = () => {
         <div className="benefits-grid">
           {benefits.map((benefit, index) => (
             <div className="benefit-card" key={index}>
-              <div className="benefit-icon">{benefit.icon}</div>
+              <div className="benefit-icon">{typeof benefit.icon === 'function' ? React.createElement(benefit.icon, { size: 40 }) : benefit.icon}</div>
               <h3>{benefit.title}</h3>
               <p>{benefit.description}</p>
             </div>

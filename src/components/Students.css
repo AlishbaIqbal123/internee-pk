@@ -1,6 +1,6 @@
 .students-section {
   padding: 6rem 0;
-  background: #1a1a1a;
+  background: transparent;
 }
 
 .section-header {
@@ -23,8 +23,8 @@
 
 .benefits-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
   margin-bottom: 4rem;
 }
 
@@ -33,14 +33,14 @@
   border-radius: 15px;
   padding: 2.5rem 2rem;
   text-align: center;
-  box-shadow: 0 5px 20px rgba(255, 105, 180, 0.1);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  border: 1px solid rgba(255, 105, 180, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .benefit-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(255, 105, 180, 0.2);
+  box-shadow: 0 15px 30px rgba(0, 204, 0, 0.2);
 }
 
 .benefit-icon {
@@ -64,8 +64,8 @@
   background: white;
   padding: 3rem;
   border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(255, 105, 180, 0.15);
-  border: 1px solid rgba(255, 105, 180, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 204, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .students-cta h3 {

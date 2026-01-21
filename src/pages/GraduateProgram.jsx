@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { FaStethoscope, FaHardHat, FaLaptopCode } from 'react-icons/fa';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Newsletter from '../components/Newsletter';
@@ -7,94 +9,75 @@ import './GraduateProgram.css';
 const GraduateProgram = () => {
   const programs = [
     {
-      id: 1,
-      title: 'Software Engineering Graduate Program',
-      duration: '6 months',
-      type: 'Full-time',
-      description: 'Comprehensive program covering full-stack development, system design, and industry best practices.',
-      skills: ['React', 'Node.js', 'Database Design', 'API Development']
+      id: 'healthcare',
+      slug: 'healthcare',
+      title: 'Health Care',
+      icon: FaStethoscope,
+      image: '/graduate-programs/healthcare.jpg',
+      description: 'Step into the world where every second counts and lives are changed. Whether it\'s assisting in patient care, supporting medical research, or exploring health tech innovation our internships put you at the heart of the action. Join the frontlines of impact and make your mark in the future of healthcare.'
     },
     {
-      id: 2,
-      title: 'Data Science Graduate Program',
-      duration: '6 months',
-      type: 'Full-time',
-      description: 'Master data analysis, machine learning, and data visualization techniques.',
-      skills: ['Python', 'Machine Learning', 'Data Analysis', 'SQL']
+      id: 'engineering',
+      slug: 'engineering',
+      title: 'Engineering',
+      icon: FaHardHat,
+      image: '/graduate-programs/engineering.jpg',
+      description: 'Enter the realm where ideas turn into structures, circuits, and code. From building the future to solving real-world challenges, our engineering internships place you in the driver\'s seat of innovation. Whether it\'s civil, electrical, mechanical, or software get ready to design, build, and disrupt.'
     },
     {
-      id: 3,
-      title: 'Digital Marketing Graduate Program',
-      duration: '4 months',
-      type: 'Part-time',
-      description: 'Learn SEO, social media marketing, content strategy, and analytics.',
-      skills: ['SEO', 'Social Media', 'Content Strategy', 'Analytics']
+      id: 'information-technology',
+      slug: 'information-technology',
+      title: 'Information Technology',
+      icon: FaLaptopCode,
+      image: '/graduate-programs/information-technology.jpg',
+      description: 'Dive into the digital battlefield where code is power and innovation never sleeps. From software development to cybersecurity, data analytics to cloud computing our IT internships equip you to lead the tech revolution. Step in, gear up, and shape the future of technology.'
     }
   ];
 
   return (
     <div className="graduate-program-page">
       <Header />
+      
       <div className="program-hero">
         <div className="container">
-          <h1>Graduate Program</h1>
-          <p>Accelerate your career with our intensive graduate programs designed for fresh graduates</p>
+          <h1>Graduate Programs</h1>
+          <p>Explore our comprehensive graduate programs designed to advance your career and expand your knowledge.</p>
         </div>
       </div>
 
       <div className="program-content">
         <div className="container">
           <div className="section-header">
-            <h2>Choose Your Path</h2>
-            <p>Select a program that aligns with your career goals and interests</p>
+            <h2>Explore Categories</h2>
           </div>
 
           <div className="programs-grid">
             {programs.map((program) => (
-              <div key={program.id} className="program-card">
-                <div className="program-badge">{program.type}</div>
-                <h3>{program.title}</h3>
-                <div className="program-duration">
-                  <span>⏱️ {program.duration}</span>
-                </div>
-                <p className="program-description">{program.description}</p>
-                <div className="program-skills">
-                  <h4>Skills You'll Learn:</h4>
-                  <div className="skills-list">
-                    {program.skills.map((skill, index) => (
-                      <span key={index} className="skill-tag">{skill}</span>
-                    ))}
+              <Link 
+                key={program.id} 
+                to={`/graduateprogram/${program.slug}`}
+                className="program-card"
+              >
+                <div className="program-image-wrapper">
+                  <img 
+                    src={program.image} 
+                    alt={program.title}
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      const placeholder = e.target.nextElementSibling;
+                      if (placeholder) {
+                        placeholder.style.display = 'flex';
+                      }
+                    }}
+                  />
+                  <div className="program-image-placeholder" style={{ display: 'none' }}>
+                    {React.createElement(program.icon, { style: { fontSize: '4rem', opacity: 0.3 } })}
                   </div>
                 </div>
-                <button className="btn-apply-program">Apply Now</button>
-              </div>
+                <h3>{program.title}</h3>
+                <p className="program-description">{program.description}</p>
+              </Link>
             ))}
-          </div>
-
-          <div className="program-benefits">
-            <h2>Program Benefits</h2>
-            <div className="benefits-grid">
-              <div className="benefit-card">
-                <div className="benefit-icon">🎓</div>
-                <h3>Industry Mentorship</h3>
-                <p>Learn from experienced professionals</p>
-              </div>
-              <div className="benefit-card">
-                <div className="benefit-icon">💼</div>
-                <h3>Job Placement</h3>
-                <p>Guaranteed placement assistance</p>
-              </div>
-              <div className="benefit-card">
-                <div className="benefit-icon">🏆</div>
-                <h3>Certification</h3>
-                <p>Earn recognized certificates</p>
-              </div>
-              <div className="benefit-card">
-                <div className="benefit-icon">🤝</div>
-                <h3>Networking</h3>
-                <p>Connect with industry leaders</p>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -106,5 +89,3 @@ const GraduateProgram = () => {
 };
 
 export default GraduateProgram;
-
-

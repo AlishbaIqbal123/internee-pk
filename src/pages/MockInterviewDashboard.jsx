@@ -1,5 +1,6 @@
 import React from 'react';
 import DashboardSidebar from '../components/DashboardSidebar';
+import DashboardHeaderActions from '../components/DashboardHeaderActions';
 import './MockInterviewDashboard.css';
 
 const MockInterviewDashboard = () => {
@@ -20,11 +21,7 @@ const MockInterviewDashboard = () => {
       <main className="mock-interview-main">
         <div className="mock-interview-header">
           <h1>Dashboard</h1>
-          <div className="header-actions">
-            <button className="icon-btn">☀️</button>
-            <button className="icon-btn">🔔</button>
-            <div className="user-profile-icon">👤</div>
-          </div>
+          <DashboardHeaderActions />
         </div>
 
         <div className="mock-interview-content">

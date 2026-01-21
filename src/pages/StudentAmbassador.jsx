@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaBullseye, FaHandshake, FaDollarSign, FaBook } from 'react-icons/fa';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Newsletter from '../components/Newsletter';
@@ -7,22 +8,22 @@ import './StudentAmbassador.css';
 const StudentAmbassador = () => {
   const benefits = [
     {
-      icon: '🎯',
+      icon: FaBullseye,
       title: 'Leadership Opportunities',
       description: 'Develop leadership skills by representing Internee.pk in your community'
     },
     {
-      icon: '🤝',
+      icon: FaHandshake,
       title: 'Networking',
       description: 'Connect with industry professionals and fellow ambassadors'
     },
     {
-      icon: '💰',
+      icon: FaDollarSign,
       title: 'Earn Rewards',
       description: 'Get rewarded for your contributions and referrals'
     },
     {
-      icon: '📚',
+      icon: FaBook,
       title: 'Skill Development',
       description: 'Enhance your communication and marketing skills'
     }
@@ -57,7 +58,7 @@ const StudentAmbassador = () => {
           <div className="benefits-grid">
             {benefits.map((benefit, index) => (
               <div key={index} className="benefit-card">
-                <div className="benefit-icon">{benefit.icon}</div>
+                <div className="benefit-icon">{typeof benefit.icon === 'function' ? React.createElement(benefit.icon, { size: 40 }) : benefit.icon}</div>
                 <h3>{benefit.title}</h3>
                 <p>{benefit.description}</p>
               </div>

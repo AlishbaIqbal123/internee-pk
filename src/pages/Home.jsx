@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
 import Partners from '../components/Partners';
-import DreamInternship from '../components/DreamInternship';
+import InternshipCards from '../components/InternshipCards';
 import TaskManagementPlatform from '../components/TaskManagementPlatform';
 import TechInstructor from '../components/TechInstructor';
 import ProfessionalDevelopment from '../components/ProfessionalDevelopment';
@@ -11,17 +11,16 @@ import HowItWorks from '../components/HowItWorks';
 import AICareerCoach from '../components/AICareerCoach';
 import FinalCTA from '../components/FinalCTA';
 import Testimonials from '../components/Testimonials';
-import Newsletter from '../components/Newsletter';
 import Footer from '../components/Footer';
-import ScrollToTop from '../components/ScrollToTop';
+import './Home.css';
 
 const Home = () => {
   return (
-    <div className="App">
+    <div className="home-page">
       <Header />
       <HeroSection />
       <Partners />
-      <DreamInternship />
+      <InternshipCards />
       <TaskManagementPlatform />
       <TechInstructor />
       <ProfessionalDevelopment />
@@ -30,13 +29,9 @@ const Home = () => {
       <AICareerCoach />
       <FinalCTA />
       <Testimonials />
-      <Newsletter />
       <Footer />
-      <ScrollToTop />
     </div>
   );
 };
 
 export default Home;
-
-

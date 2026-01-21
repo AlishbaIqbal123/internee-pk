@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FaUser, FaUserTie, FaUserGraduate, FaPalette } from 'react-icons/fa';
 import './Testimonials.css';
 
 const Testimonials = () => {
@@ -10,7 +11,7 @@ const Testimonials = () => {
       name: 'Kashan Soomro',
       location: 'Karachi, Pakistan',
       content: 'Thanks to internee.pk, I grew up my skills here and now I am working as a Flutter Developer in a US company.',
-      avatar: '👨‍💻',
+      avatar: FaUserTie,
       rating: 5
     },
     {
@@ -18,7 +19,7 @@ const Testimonials = () => {
       name: 'Sarah Johnson',
       location: 'Lahore, Pakistan',
       content: 'internee.pk helped me land my dream internship. The platform connected me with opportunities perfectly matched to my skills and interests.',
-      avatar: '👩‍💻',
+      avatar: FaUser,
       rating: 5
     },
     {
@@ -26,7 +27,7 @@ const Testimonials = () => {
       name: 'Ahmed Ali',
       location: 'Islamabad, Pakistan',
       content: 'The personalized recommendations and career guidance I received through internee.pk were invaluable. I secured a competitive internship that launched my career.',
-      avatar: '👨‍💻',
+      avatar: FaUserTie,
       rating: 5
     },
     {
@@ -34,7 +35,7 @@ const Testimonials = () => {
       name: 'Fatima Khan',
       location: 'Karachi, Pakistan',
       content: 'As a student, finding relevant internships seemed impossible. internee.pk made it easy with its comprehensive database and application support.',
-      avatar: '👩‍🎨',
+      avatar: FaPalette,
       rating: 5
     }
   ];
@@ -62,7 +63,7 @@ const Testimonials = () => {
         
         <div className="testimonials-container">
           <div className="testimonial-card">
-            <div className="avatar">{testimonials[currentIndex].avatar}</div>
+            <div className="avatar">{typeof testimonials[currentIndex].avatar === 'function' ? React.createElement(testimonials[currentIndex].avatar, { size: 40 }) : testimonials[currentIndex].avatar}</div>
             <p className="testimonial-content">"{testimonials[currentIndex].content}"</p>
             <div className="testimonial-author">
               <h4>{testimonials[currentIndex].name}</h4>

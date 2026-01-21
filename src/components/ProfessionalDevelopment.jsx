@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FaBullseye, FaChalkboardTeacher, FaTrophy, FaFileAlt, FaComments, FaChartBar, FaBook } from 'react-icons/fa';
 import './ProfessionalDevelopment.css';
 
 const ProfessionalDevelopment = () => {
@@ -71,6 +72,7 @@ const ProfessionalDevelopment = () => {
     <section className="professional-dev-section" id="professional-dev">
       <div className="container">
         <div className={`section-header ${isVisible ? 'fade-in' : ''}`}>
+          <span className="section-tag">Professional Development</span>
           <h2>Launch Your Career with <strong>Internee.pk</strong></h2>
           <p>Pakistan's innovative platform for career growth and professional development. Join our <strong>virtual internships</strong> to gain practical experience and kickstart your professional journey.</p>
         </div>
@@ -86,7 +88,7 @@ const ProfessionalDevelopment = () => {
 
         <div className="features-section">
           <div className={`feature-block ${isVisible ? 'fade-in' : ''}`}>
-            <div className="feature-icon-large">🎯</div>
+            <div className="feature-icon-large"><FaBullseye /></div>
             <h3>Targeted Learning</h3>
             <p>Industry-specific <strong>virtual internships</strong> designed to build practical skills and experience.</p>
             <div className="feature-list">
@@ -97,7 +99,7 @@ const ProfessionalDevelopment = () => {
           </div>
 
           <div className={`feature-block ${isVisible ? 'fade-in' : ''}`}>
-            <div className="feature-icon-large">👨‍🏫</div>
+            <div className="feature-icon-large"><FaChalkboardTeacher /></div>
             <h3>Mentorship Program</h3>
             <p>Learn directly from industry experts at <strong>Internee.pk</strong></p>
             <ul className="feature-list-ul">
@@ -111,7 +113,7 @@ const ProfessionalDevelopment = () => {
           </div>
 
           <div className={`feature-block ${isVisible ? 'fade-in' : ''}`}>
-            <div className="feature-icon-large">🏆</div>
+            <div className="feature-icon-large"><FaTrophy /></div>
             <h3>Certification Track</h3>
             <p>Earn recognized certifications through <strong>virtual internships</strong></p>
             <ul className="feature-list-ul">
@@ -125,16 +127,46 @@ const ProfessionalDevelopment = () => {
           </div>
         </div>
 
-        <div className={`learning-journey ${isVisible ? 'fade-in' : ''}`}>
-          <h3>Your Learning Journey</h3>
-          <div className="phases-container">
-            {phases.map((phase, index) => (
-              <div key={index} className="phase-card">
-                <div className="phase-number">{phase.number}</div>
-                <h4>Phase {phase.number}: {phase.title}</h4>
-                <p>{phase.description}</p>
+        <div className={`learning-journey-and-resources ${isVisible ? 'fade-in' : ''}`}>
+          <div className="learning-journey">
+            <h3>Your Learning Journey</h3>
+            <div className="phases-container">
+              {phases.map((phase, index) => {
+                const progress = index === 0 ? 80 : index === 1 ? 60 : 40;
+                return (
+                  <div key={index} className="phase-item">
+                    <div className="phase-header">
+                      <span className="phase-label">Phase {phase.number}: {phase.title}</span>
+                    </div>
+                    <div className="progress-bar-wrapper">
+                      <div className="progress-bar-fill" style={{ width: `${progress}%` }}></div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="career-resources">
+            <h3>Career Resources</h3>
+            <div className="resources-grid">
+              <div className="resource-card">
+                <div className="resource-icon"><FaFileAlt /></div>
+                <span>Resume Templates</span>
               </div>
-            ))}
+              <div className="resource-card">
+                <div className="resource-icon"><FaComments /></div>
+                <span>Mock Interviews</span>
+              </div>
+              <div className="resource-card">
+                <div className="resource-icon"><FaChartBar /></div>
+                <span>Skill Analysis</span>
+              </div>
+              <div className="resource-card">
+                <div className="resource-icon"><FaBook /></div>
+                <span>Learning Paths</span>
+              </div>
+            </div>
           </div>
         </div>
 

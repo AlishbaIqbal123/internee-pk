@@ -9,11 +9,26 @@
   margin: 0 auto 4rem;
 }
 
+.final-cta-section {
+  padding: 80px 0;
+  background: var(--color-bg-secondary);
+  text-align: center;
+  transition: background var(--transition-base);
+}
+
+[data-theme="light"] .final-cta-section {
+  background: #f8f9fa;
+}
+
+[data-theme="dark"] .final-cta-section {
+  background: #1a1a1a;
+}
+
 .trending-label {
   display: block;
   font-size: 0.9rem;
   font-weight: 600;
-  color: #00FF00;
+  color: var(--color-primary);
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 1.5rem;
@@ -21,17 +36,19 @@
 
 .final-cta-section h1 {
   font-size: clamp(2.5rem, 5vw, 3.5rem);
-  color: #333;
+  color: var(--color-text-primary);
   line-height: 1.3;
   font-weight: 700;
   margin-bottom: 1.5rem;
+  transition: color var(--transition-base);
 }
 
 .final-cta-section p {
   font-size: clamp(1rem, 2vw, 1.2rem);
-  color: #666;
+  color: var(--color-text-secondary);
   line-height: 1.7;
   margin-bottom: 2.5rem;
+  transition: color var(--transition-base);
 }
 
 .cta-buttons {
@@ -57,25 +74,25 @@
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #00FF00 0%, #00E600 100%);
-  color: white;
-  box-shadow: 0 4px 15px rgba(0, 255, 0, 0.3);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
+  color: #000000;
+  box-shadow: 0 4px 15px rgba(0, 204, 0, 0.3);
 }
 
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0, 255, 0, 0.4);
+  box-shadow: 0 6px 20px rgba(0, 204, 0, 0.4);
 }
 
 .btn-secondary {
   background: transparent;
-  color: #00FF00;
-  border: 2px solid #00FF00;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
 }
 
 .btn-secondary:hover {
-  background: #00FF00;
-  color: white;
+  background: var(--color-primary);
+  color: #000000;
   transform: translateY(-3px);
 }
 
@@ -89,12 +106,13 @@
 }
 
 .stats-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
   margin-top: 4rem;
   padding-top: 3rem;
-  border-top: 1px solid rgba(0, 255, 0, 0.2);
+  border-top: 1px solid rgba(0, 204, 0, 0.2);
+  flex-wrap: wrap;
 }
 
 .stat-item {
@@ -105,15 +123,16 @@
   display: block;
   font-size: 2.5rem;
   font-weight: 700;
-  color: #00FF00;
+  color: var(--color-primary);
   margin-bottom: 0.5rem;
 }
 
 .stat-label {
   display: block;
   font-size: 1rem;
-  color: #666;
+  color: var(--color-text-secondary);
   font-weight: 500;
+  transition: color var(--transition-base);
 }
 
 .fade-in {

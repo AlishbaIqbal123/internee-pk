@@ -4,6 +4,14 @@
   transition: background var(--transition-base);
 }
 
+[data-theme="light"] .partners-section {
+  background: #f8f9fa;
+}
+
+[data-theme="dark"] .partners-section {
+  background: #1a1a1a;
+}
+
 .partners-section .section-header {
   text-align: center;
   margin-bottom: 3rem;
@@ -30,12 +38,16 @@
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
-  background: var(--color-bg-card);
+  background: #ffffff;
   border-radius: 15px;
   box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease, background var(--transition-base);
+  transition: all 0.3s ease;
   width: 100%;
   max-width: 200px;
+}
+
+[data-theme="dark"] .partner-logo {
+  background: #2d2d2d;
 }
 
 [data-theme="dark"] .partner-logo {

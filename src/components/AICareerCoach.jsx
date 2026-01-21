@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { FaFileAlt, FaEnvelope, FaBriefcase, FaChartLine, FaBullseye, FaChartBar, FaDollarSign } from 'react-icons/fa';
 import './AICareerCoach.css';
 
 const AICareerCoach = () => {
@@ -28,22 +29,22 @@ const AICareerCoach = () => {
 
   const features = [
     {
-      icon: '📄',
+      icon: FaFileAlt,
       title: 'AI Resume Building',
       description: 'Stand out in the AI job market with our professional resume-building guide. Learn how to highlight your AI skills, experience, and key accomplishments to catch the attention of top employers.'
     },
     {
-      icon: '✉️',
+      icon: FaEnvelope,
       title: 'Cover Letter Creation',
       description: 'Create compelling cover letters that showcase your passion for AI and demonstrate your value to employers. Make a strong first impression that speaks directly to your AI expertise.'
     },
     {
-      icon: '💼',
+      icon: FaBriefcase,
       title: 'Interview Preparation',
       description: 'Ace your AI job interviews with confidence through practice questions, interview strategies, and tips for answering technical AI-related queries.'
     },
     {
-      icon: '📈',
+      icon: FaChartLine,
       title: 'Industry Insights',
       description: 'Stay ahead of the curve with up-to-date insights on the latest AI trends, market demands, and emerging technologies in the AI industry.'
     }
@@ -51,17 +52,17 @@ const AICareerCoach = () => {
 
   const whyChoose = [
     {
-      icon: '🎯',
+      icon: FaBullseye,
       title: 'Comprehensive Guidance',
       description: 'Everything you need to succeed in the AI industry'
     },
     {
-      icon: '📊',
+      icon: FaChartBar,
       title: 'Industry-Ready Insights',
       description: 'Stay updated on the latest AI trends'
     },
     {
-      icon: '💰',
+      icon: FaDollarSign,
       title: 'Monetization Options',
       description: 'Share your AI knowledge and earn income'
     }
@@ -82,7 +83,7 @@ const AICareerCoach = () => {
               className={`feature-card ${isVisible ? 'fade-in' : ''}`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="feature-icon">{feature.icon}</div>
+              <div className="feature-icon">{typeof feature.icon === 'function' ? React.createElement(feature.icon, { size: 40 }) : feature.icon}</div>
               <h3>{feature.title}</h3>
               <p>{feature.description}</p>
             </div>
@@ -104,7 +105,7 @@ const AICareerCoach = () => {
                 className={`why-choose-card ${isVisible ? 'fade-in' : ''}`}
                 style={{ animationDelay: `${(index + 4) * 0.1}s` }}
               >
-                <div className="why-choose-icon">{item.icon}</div>
+                <div className="why-choose-icon">{typeof item.icon === 'function' ? React.createElement(item.icon, { size: 40 }) : item.icon}</div>
                 <h4>{item.title}</h4>
                 <p>{item.description}</p>
               </div>

@@ -5,7 +5,7 @@
 }
 
 .internship-hero {
-  background: linear-gradient(135deg, #00FF00 0%, #00E600 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
   color: #000000;
   padding: 100px 0 60px;
   text-align: center;
@@ -38,7 +38,7 @@
 
 .btn-primary {
   background: #000000;
-  color: #00FF00;
+  color: var(--color-primary);
   padding: 1rem 2.5rem;
   border: none;
   border-radius: 30px;
@@ -89,7 +89,7 @@
 }
 
 .loading-text {
-  color: #00FF00;
+  color: var(--color-primary);
   font-style: italic;
 }
 
@@ -112,12 +112,37 @@
 
 .category-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 10px 30px rgba(0, 255, 0, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 204, 0, 0.2);
 }
 
 .category-icon {
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
+  width: 100%;
+  height: 180px;
+  margin: 0 0 1rem;
+  display: block;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.category-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+
+.category-icon-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background-color: var(--color-primary);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .category-card h3 {
@@ -134,7 +159,7 @@
 }
 
 .btn-explore {
-  background: #00FF00;
+  background: var(--color-primary);
   color: #000000;
   padding: 0.75rem 2rem;
   border: none;
@@ -148,8 +173,8 @@
 
 .btn-explore:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 255, 0, 0.3);
-  background: #00E600;
+  box-shadow: 0 4px 12px rgba(0, 204, 0, 0.3);
+  background: var(--color-primary-hover);
 }
 
 .stats-section {
@@ -170,7 +195,7 @@
 
 .stat-card h3 {
   font-size: 3rem;
-  color: #00FF00;
+  color: var(--color-primary);
   font-weight: 700;
   margin-bottom: 0.5rem;
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import DashboardSidebar from '../components/DashboardSidebar';
+import DashboardHeaderActions from '../components/DashboardHeaderActions';
 import './Certificate.css';
 
 const Certificate = () => {
@@ -10,11 +11,7 @@ const Certificate = () => {
       <main className="certificate-main">
         <div className="certificate-header">
           <h1>Dashboard</h1>
-          <div className="header-actions">
-            <button className="icon-btn">☀️</button>
-            <button className="icon-btn">🔔</button>
-            <div className="user-profile-icon">👤</div>
-          </div>
+          <DashboardHeaderActions />
         </div>
 
         <div className="certificate-content">

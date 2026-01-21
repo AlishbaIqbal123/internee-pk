@@ -1,14 +1,28 @@
 .graduate-program-page {
   min-height: 100vh;
+  background: var(--color-bg-primary);
+  transition: background var(--transition-base);
+}
+
+[data-theme="light"] .graduate-program-page {
   background: #f8f9fa;
 }
 
+[data-theme="dark"] .graduate-program-page {
+  background: #1a1a1a;
+}
+
 .program-hero {
-  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-  color: white;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
+  color: #000000;
   padding: 100px 0 60px;
   text-align: center;
   margin-top: 70px;
+}
+
+.program-hero h1,
+.program-hero p {
+  color: #000000;
 }
 
 .program-hero h1 {
@@ -34,43 +48,107 @@
 
 .section-header h2 {
   font-size: clamp(2rem, 4vw, 2.5rem);
-  color: #212529;
+  color: var(--color-text-primary);
   margin-bottom: 1rem;
   font-weight: 700;
+  transition: color var(--transition-base);
+}
+
+[data-theme="light"] .section-header h2 {
+  color: #212529;
+}
+
+[data-theme="dark"] .section-header h2 {
+  color: #ffffff;
 }
 
 .section-header p {
   font-size: clamp(1rem, 2vw, 1.1rem);
+  color: var(--color-text-secondary);
+  transition: color var(--transition-base);
+}
+
+[data-theme="light"] .section-header p {
   color: #6c757d;
+}
+
+[data-theme="dark"] .section-header p {
+  color: #9ca3af;
 }
 
 .programs-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-bottom: 4rem;
 }
 
+@media (max-width: 992px) {
+  .programs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .programs-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .program-card {
-  background: white;
-  padding: 2.5rem;
+  background: #2d2d2d;
   border-radius: 15px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  position: relative;
+  overflow: hidden;
   transition: all 0.3s ease;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="light"] .program-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .program-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 204, 0, 0.2);
+}
+
+.program-image-wrapper {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  background: #1a1a1a;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.program-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.program-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1a1a1a;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .program-badge {
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;
-  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-  color: white;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
+  color: #000000;
   padding: 0.5rem 1rem;
   border-radius: 20px;
   font-size: 0.85rem;
@@ -79,22 +157,26 @@
 
 .program-card h3 {
   font-size: 1.5rem;
-  color: #212529;
-  margin-bottom: 1rem;
+  color: #ffffff;
+  margin: 1.5rem 1.5rem 1rem;
   font-weight: 700;
-  padding-right: 100px;
+  transition: color var(--transition-base);
 }
 
-.program-duration {
-  margin-bottom: 1rem;
-  color: #6c757d;
-  font-size: 0.95rem;
+[data-theme="light"] .program-card h3 {
+  color: #212529;
 }
 
 .program-description {
-  color: #6c757d;
+  color: rgba(255, 255, 255, 0.9);
   line-height: 1.7;
-  margin-bottom: 1.5rem;
+  margin: 0 1.5rem 1.5rem;
+  font-size: 0.95rem;
+  transition: color var(--transition-base);
+}
+
+[data-theme="light"] .program-description {
+  color: #6c757d;
 }
 
 .program-skills {
@@ -115,8 +197,8 @@
 }
 
 .skill-tag {
-  background: #f0f0f0;
-  color: #6366f1;
+  background: rgba(0, 204, 0, 0.1);
+  color: var(--color-primary);
   padding: 0.4rem 0.9rem;
   border-radius: 20px;
   font-size: 0.85rem;
@@ -125,8 +207,8 @@
 
 .btn-apply-program {
   width: 100%;
-  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-  color: white;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
+  color: #000000;
   padding: 1rem;
   border: none;
   border-radius: 10px;

@@ -27,8 +27,10 @@ const HeroSection = () => {
             <p>Internee.pk kickstart student's tech careers with first internships, providing industry exposure, practical skills, and networking opportunities.</p>
             <div className="hero-buttons">
               <Link to="/jobs/public" className="btn btn-primary">Our Job Portal</Link>
+            </div>
+            <div className="hero-buttons">
               <Link to="/dashboard" className="btn btn-dark">
-                Sign In
+                Dashboard
                 <span className="btn-icon">↗</span>
               </Link>
             </div>

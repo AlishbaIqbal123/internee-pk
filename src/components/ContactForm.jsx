@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FaEnvelope } from 'react-icons/fa';
 import './ContactForm.css';
 
 const ContactForm = () => {
@@ -103,7 +104,7 @@ const ContactForm = () => {
             </div>
             
             <div className="info-item">
-              <div className="info-icon">✉️</div>
+              <div className="info-icon"><FaEnvelope /></div>
               <div className="info-content">
                 <h3>Email</h3>
                 <p>info@internee.pk</p>

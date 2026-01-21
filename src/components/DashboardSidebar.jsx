@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { FaUser, FaFileAlt, FaAward, FaBriefcase, FaGraduationCap, FaLaptopCode } from 'react-icons/fa';
 import './DashboardSidebar.css';
 
 const DashboardSidebar = () => {
@@ -31,7 +32,7 @@ const DashboardSidebar = () => {
       <h1 className="sidebar-logo">Internee.pk</h1>
       <nav className="sidebar-nav">
         <Link to="/dashboard" className={`nav-item ${isActive('/dashboard') && !location.pathname.includes('/assignments') && !location.pathname.includes('/certificate') ? 'active' : ''}`}>
-          <span className="nav-icon">👤</span>
+          <span className="nav-icon"><FaUser /></span>
           <span>Profile</span>
           <span className="nav-arrow">→</span>
         </Link>
@@ -40,7 +41,7 @@ const DashboardSidebar = () => {
             className={`nav-item ${expandedMenu === 'internship' || location.pathname.includes('/dashboard/assignments') || location.pathname.includes('/dashboard/certificate') ? 'active' : ''}`}
             onClick={() => toggleMenu('internship')}
           >
-            <span className="nav-icon">📄</span>
+            <span className="nav-icon"><FaFileAlt /></span>
             <span>Internship</span>
             <span className="nav-arrow">{expandedMenu === 'internship' ? '↓' : '→'}</span>
           </div>
@@ -66,7 +67,7 @@ const DashboardSidebar = () => {
             className={`nav-item ${expandedMenu === 'mock' || location.pathname.includes('/aimock') ? 'active' : ''}`}
             onClick={() => toggleMenu('mock')}
           >
-            <span className="nav-icon">🏅</span>
+            <span className="nav-icon"><FaAward /></span>
             <span>Mock Interview</span>
             <span className="nav-arrow">{expandedMenu === 'mock' ? '↓' : '→'}</span>
           </div>
@@ -100,17 +101,17 @@ const DashboardSidebar = () => {
           )}
         </div>
         <Link to="/jobs/public" className={`nav-item ${isActive('/jobs/public') ? 'active' : ''}`}>
-          <span className="nav-icon">💼</span>
+          <span className="nav-icon"><FaBriefcase /></span>
           <span>Job Portal</span>
           <span className="nav-arrow">→</span>
         </Link>
         <Link to="/ai-career-coach" className={`nav-item ${isActive('/ai-career-coach') ? 'active' : ''}`}>
-          <span className="nav-icon">📚</span>
+          <span className="nav-icon"><FaGraduationCap /></span>
           <span>AI Career Coach</span>
           <span className="nav-arrow">→</span>
         </Link>
         <Link to="/ai-course-lms" className={`nav-item ${isActive('/ai-course-lms') ? 'active' : ''}`}>
-          <span className="nav-icon">🖥️</span>
+          <span className="nav-icon"><FaLaptopCode /></span>
           <span>AI Course LMS</span>
           <span className="nav-arrow">→</span>
         </Link>

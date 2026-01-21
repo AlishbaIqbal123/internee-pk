@@ -57,7 +57,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #00FF00;
+  background: var(--color-primary);
   color: #000000;
   display: flex;
   align-items: center;
@@ -68,8 +68,38 @@
   transition: all 0.3s ease;
 }
 
+.theme-toggle-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: #2d2d2d;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+  background: #3d3d3d;
+  transform: translateY(-2px);
+}
+
+.no-tasks-message {
+  padding: 2rem;
+  text-align: center;
+}
+
+.no-tasks-message p {
+  color: #9ca3af;
+  font-size: 1rem;
+}
+
 .user-profile-icon:hover {
-  background: #00E600;
+  background: var(--color-primary-hover);
   transform: scale(1.05);
 }
 
@@ -92,7 +122,7 @@
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: #00FF00;
+  background: var(--color-primary);
   color: #000000;
   display: flex;
   align-items: center;
@@ -145,8 +175,7 @@
 
 .progress-chart {
   width: 100%;
-  overflow-x: auto;
-  overflow-y: visible;
+  overflow: visible;
   position: relative;
 }
 
@@ -156,10 +185,25 @@
   background: transparent;
   border-radius: 8px;
   display: block;
+  overflow: visible;
 }
 
 .tooltip-group {
   pointer-events: none;
+  overflow: visible;
+}
+
+.no-data-message {
+  background: #2d2d2d;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.no-data-message p {
+  color: #9ca3af;
+  font-size: 1rem;
+  margin: 0;
 }
 
 .achievements-section {
@@ -175,8 +219,8 @@
 }
 
 .btn-view-all {
-  background: #00FF00;
-  color: #ffffff;
+  background: var(--color-primary);
+  color: #000000;
   padding: 0.75rem 2rem;
   border: none;
   border-radius: 8px;
@@ -186,7 +230,7 @@
 }
 
 .btn-view-all:hover {
-  background: #00E600;
+  background: var(--color-primary-hover);
   transform: translateY(-2px);
 }
 
@@ -244,8 +288,8 @@
 }
 
 .btn-task-portal {
-  background: #00FF00;
-  color: #ffffff;
+  background: var(--color-primary);
+  color: #000000;
   padding: 0.75rem 2rem;
   border: none;
   border-radius: 8px;
@@ -256,7 +300,7 @@
 }
 
 .btn-task-portal:hover {
-  background: #00E600;
+  background: var(--color-primary-hover);
   transform: translateY(-2px);
 }
 
@@ -268,7 +312,7 @@
 
 .section-title-green {
   font-size: 1.5rem;
-  color: #00FF00;
+  color: var(--color-primary);
   margin-bottom: 1.5rem;
 }
 
@@ -280,7 +324,7 @@
 .stat-number {
   font-size: 4rem;
   font-weight: 700;
-  color: #00FF00;
+  color: var(--color-primary);
   line-height: 1;
 }
 
@@ -322,8 +366,8 @@
 }
 
 .btn-re-attempt {
-  background: #00FF00;
-  color: #ffffff;
+  background: var(--color-primary);
+  color: #000000;
   padding: 0.75rem;
   border: none;
   border-radius: 8px;
@@ -333,7 +377,7 @@
 }
 
 .btn-re-attempt:hover {
-  background: #00E600;
+  background: var(--color-primary-hover);
 }
 
 .btn-show-all {
@@ -369,7 +413,7 @@
 }
 
 .check-icon {
-  color: #00FF00;
+  color: var(--color-primary);
   font-size: 1.25rem;
 }
 
@@ -412,7 +456,7 @@
 
 .progress-fill {
   height: 100%;
-  background: #00FF00;
+  background: var(--color-primary);
   transition: width 0.3s ease;
 }
 

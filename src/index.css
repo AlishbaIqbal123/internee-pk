@@ -15,11 +15,12 @@
 
 /* ===== CSS VARIABLES (Design Tokens) ===== */
 :root {
-  /* Primary Colors - Vibrant Green */
-  --color-primary: #00FF00;
-  --color-primary-hover: #00E600;
-  --color-primary-light: #33FF33;
-  --color-primary-dark: #00CC00;
+  /* Primary Colors - Darker Green */
+  --color-primary: #00CC00;
+  --color-primary-hover: #00B300;
+  --color-primary-light: #33DD33;
+  --color-primary-dark: #009900;
+  --color-primary-text-on-bg: #003300; /* Darker green for text on green backgrounds */
 
   /* Accent Colors */
   --color-accent-blue: #00FF00;

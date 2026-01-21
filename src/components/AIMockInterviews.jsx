@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FaRobot, FaLightbulb, FaBullseye, FaDumbbell, FaBolt, FaChartBar } from 'react-icons/fa';
 import './AIMockInterviews.css';
 
 const AIMockInterviews = () => {
@@ -29,17 +30,17 @@ const AIMockInterviews = () => {
 
   const features = [
     {
-      icon: '🤖',
+      icon: FaRobot,
       title: 'Realistic AI Interview Simulations',
       description: 'Simulate real interview environments powered by AI. Perfect for students seeking online internship interview practice or job readiness.'
     },
     {
-      icon: '💡',
+      icon: FaLightbulb,
       title: 'Smart Feedback with AI',
       description: 'Instantly analyze your answers, tone, and relevance. Improve every time with feedback tailored for virtual internship candidates.'
     },
     {
-      icon: '🎯',
+      icon: FaBullseye,
       title: 'Role-Based Mock Interviews',
       description: 'Practice interviews for software engineering, product management, business, and digital marketing roles in our internee.pk platform.'
     }
@@ -47,17 +48,17 @@ const AIMockInterviews = () => {
 
   const benefits = [
     {
-      icon: '💪',
+      icon: FaDumbbell,
       title: 'Build Real Interview Confidence',
       description: 'Reduce anxiety and increase success rate through repeated AI-based mock interview sessions.'
     },
     {
-      icon: '⚡',
+      icon: FaBolt,
       title: 'Become Job-Ready Fast',
       description: 'Structured interview training that prepares you for real-world scenarios. Perfect for students applying for internships.'
     },
     {
-      icon: '📊',
+      icon: FaChartBar,
       title: 'Track Progress with Reports',
       description: 'Access detailed performance reports you can share with mentors and hiring managers.'
     }
@@ -79,7 +80,7 @@ const AIMockInterviews = () => {
               className={`feature-card ${isVisible ? 'fade-in' : ''}`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="feature-icon">{feature.icon}</div>
+              <div className="feature-icon">{typeof feature.icon === 'function' ? React.createElement(feature.icon, { size: 40 }) : feature.icon}</div>
               <h3>{feature.title}</h3>
               <p>{feature.description}</p>
             </div>
@@ -95,7 +96,7 @@ const AIMockInterviews = () => {
                 className={`benefit-card ${isVisible ? 'fade-in' : ''}`}
                 style={{ animationDelay: `${(index + 3) * 0.1}s` }}
               >
-                <div className="benefit-icon">{benefit.icon}</div>
+                <div className="benefit-icon">{typeof benefit.icon === 'function' ? React.createElement(benefit.icon, { size: 40 }) : benefit.icon}</div>
                 <h4>{benefit.title}</h4>
                 <p>{benefit.description}</p>
               </div>

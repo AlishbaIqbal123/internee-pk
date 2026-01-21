@@ -1,6 +1,6 @@
 .dashboard-sidebar {
   width: 280px;
-  background: #00FF00;
+  background: var(--color-primary);
   padding: 2rem 1.5rem;
   position: fixed;
   height: 100vh;

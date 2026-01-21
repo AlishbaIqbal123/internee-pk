@@ -1,0 +1,25 @@
+.home-page {
+  min-height: 100vh;
+  background-color: #fff;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .home-page {
+    background-color: #1a1a1a;
+    color: #ffffff;
+  }
+  
+  .home-page h1,
+  .home-page h2,
+  .home-page h3,
+  .home-page h4,
+  .home-page h5,
+  .home-page h6 {
+    color: #00FF00;
+  }
+  
+  .home-page p {
+    color: #cccccc;
+  }
+}

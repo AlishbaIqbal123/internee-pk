@@ -15,12 +15,12 @@
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
-  background: linear-gradient(135deg, #00FF00 0%, #00E600 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
   color: #000000;
   padding: 0.75rem 2rem;
   border-radius: 50px;
   font-weight: 600;
-  box-shadow: 0 4px 20px rgba(0, 255, 0, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 204, 0, 0.3);
   animation: slideDown 0.5s ease-out;
 }
 
@@ -138,7 +138,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
-  background: linear-gradient(135deg, #00FF00 0%, #00E600 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
   border: none;
   color: #000000;
   padding: var(--space-3) var(--space-6);
@@ -245,7 +245,12 @@
   gap: var(--space-4);
   animation: fadeInUp 1s ease-out 0.6s both;
   flex-wrap: wrap;
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-4);
+  justify-content: center;
+}
+
+.hero-text {
+  text-align: center;
 }
 
 /* Hero Stats */

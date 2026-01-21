@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import DashboardSidebar from '../components/DashboardSidebar';
+import DashboardHeaderActions from '../components/DashboardHeaderActions';
 import './Roadmap.css';
 
 const Roadmap = () => {
@@ -445,11 +446,7 @@ const Roadmap = () => {
       <main className="roadmap-main">
         <div className="roadmap-header">
           <h1>Dashboard</h1>
-          <div className="header-actions">
-            <button className="icon-btn">☀️</button>
-            <button className="icon-btn">🔔</button>
-            <div className="user-profile-icon">👤</div>
-          </div>
+          <DashboardHeaderActions />
         </div>
 
         <div className="roadmap-content">

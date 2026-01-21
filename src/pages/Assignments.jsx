@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import DashboardSidebar from '../components/DashboardSidebar';
+import DashboardHeaderActions from '../components/DashboardHeaderActions';
 import './Assignments.css';
 
 const Assignments = () => {
@@ -72,11 +73,7 @@ const Assignments = () => {
       <main className="assignments-main">
         <div className="assignments-header">
           <h1>Dashboard</h1>
-          <div className="header-actions">
-            <button className="icon-btn">☀️</button>
-            <button className="icon-btn">🔔</button>
-            <div className="user-profile-icon">👤</div>
-          </div>
+          <DashboardHeaderActions />
         </div>
 
         <div className="assignments-content">

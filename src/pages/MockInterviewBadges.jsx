@@ -1,5 +1,6 @@
 import React from 'react';
 import DashboardSidebar from '../components/DashboardSidebar';
+import DashboardHeaderActions from '../components/DashboardHeaderActions';
 import './MockInterviewBadges.css';
 
 const MockInterviewBadges = () => {
@@ -10,11 +11,7 @@ const MockInterviewBadges = () => {
       <main className="mock-interview-badges-main">
         <div className="mock-interview-badges-header">
           <h1>Dashboard</h1>
-          <div className="header-actions">
-            <button className="icon-btn">☀️</button>
-            <button className="icon-btn">🔔</button>
-            <div className="user-profile-icon">👤</div>
-          </div>
+          <DashboardHeaderActions />
         </div>
 
         <div className="mock-interview-badges-content">

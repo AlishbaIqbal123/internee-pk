@@ -1,14 +1,15 @@
 import React from 'react';
+import { FaBuilding } from 'react-icons/fa';
 import './Companies.css';
 
 const Companies = () => {
   const companies = [
-    { name: 'Tech Innovations', logo: '🏢', category: 'Technology' },
-    { name: 'Digital Growth Co.', logo: '🏢', category: 'Marketing' },
-    { name: 'Analytics Pro', logo: '🏢', category: 'Data Science' },
-    { name: 'Creative Solutions', logo: '🏢', category: 'Design' },
-    { name: 'Finance Leaders', logo: '🏢', category: 'Finance' },
-    { name: 'Health Plus', logo: '🏢', category: 'Healthcare' }
+    { name: 'Tech Innovations', logo: FaBuilding, category: 'Technology' },
+    { name: 'Digital Growth Co.', logo: FaBuilding, category: 'Marketing' },
+    { name: 'Analytics Pro', logo: FaBuilding, category: 'Data Science' },
+    { name: 'Creative Solutions', logo: FaBuilding, category: 'Design' },
+    { name: 'Finance Leaders', logo: FaBuilding, category: 'Finance' },
+    { name: 'Health Plus', logo: FaBuilding, category: 'Healthcare' }
   ];
 
   return (
@@ -22,7 +23,7 @@ const Companies = () => {
         <div className="companies-grid">
           {companies.map((company, index) => (
             <div className="company-card" key={index}>
-              <div className="company-logo">{company.logo}</div>
+              <div className="company-logo">{typeof company.logo === 'function' ? React.createElement(company.logo, { size: 40 }) : company.logo}</div>
               <h3>{company.name}</h3>
               <p className="company-category">{company.category}</p>
               <button className="btn-secondary">View Openings</button>

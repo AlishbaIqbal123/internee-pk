@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Newsletter from '../components/Newsletter';
@@ -13,12 +14,12 @@ const Internship = () => {
     // Simulate loading categories
     setTimeout(() => {
       setCategories([
-        { id: 1, name: 'Web Development', icon: '💻', description: 'Build modern web applications using latest technologies' },
-        { id: 2, name: 'Digital Marketing', icon: '📱', description: 'Master social media, SEO, and digital advertising strategies' },
-        { id: 3, name: 'UI/UX Design', icon: '🎨', description: 'Create beautiful and user-friendly interfaces' },
-        { id: 4, name: 'Content Writing', icon: '✍️', description: 'Develop compelling content for various platforms' },
-        { id: 5, name: 'Data Analytics', icon: '📊', description: 'Analyze data and derive actionable insights' },
-        { id: 6, name: 'Business Development', icon: '💼', description: 'Learn sales, partnerships, and business growth strategies' }
+        { id: 1, name: 'Frontend Development', image: '/internships/4.png', description: 'Build modern web applications using latest technologies' },
+        { id: 2, name: 'Chatbot Development', image: '/internships/2.png', description: 'Master social media, SEO, and digital advertising strategies' },
+        { id: 3, name: 'Graphic Design', image: '/internships/1.png', description: 'Create beautiful and user-friendly interfaces' },
+        { id: 4, name: 'Content Writing', image: '/internships/3.png', description: 'Develop compelling content for various platforms' },
+        { id: 5, name: 'Backend Development', image: '/internships/6.png', description: 'Analyze data and derive actionable insights' },
+        { id: 6, name: 'App Development', image: '/internships/5.png', description: 'Learn sales, partnerships, and business growth strategies' }
       ]);
       setLoading(false);
     }, 1000);
@@ -48,10 +49,22 @@ const Internship = () => {
             <div className="categories-grid">
               {categories.map((category) => (
                 <div key={category.id} className="category-card">
-                  <div className="category-icon">{category.icon}</div>
+                  <div className="category-icon">
+                    <img 
+                      src={category.image} 
+                      alt={category.name}
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'flex';
+                      }}
+                    />
+                    <div className="category-icon-placeholder">
+                      <span>{category.name.charAt(0)}</span>
+                    </div>
+                  </div>
                   <h3>{category.name}</h3>
                   <p className="category-description">{category.description}</p>
-                  <Link to="/dashboard" className="btn-explore">Explore</Link>
+                  <Link to={`/internship/${category.slug || category.name.toLowerCase().replace(/\s+/g, '-')}`} className="btn-explore">Explore</Link>
                 </div>
               ))}
             </div>
@@ -78,7 +91,6 @@ const Internship = () => {
         </div>
       </div>
 
-      <Newsletter />
       <Footer />
     </div>
   );

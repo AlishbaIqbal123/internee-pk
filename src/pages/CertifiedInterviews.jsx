@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { FaSearch } from 'react-icons/fa';
 import DashboardSidebar from '../components/DashboardSidebar';
+import DashboardHeaderActions from '../components/DashboardHeaderActions';
 import './CertifiedInterviews.css';
 
 const CertifiedInterviews = () => {
@@ -33,17 +35,13 @@ const CertifiedInterviews = () => {
       <main className="certified-interviews-main">
         <div className="certified-interviews-header">
           <h1>Dashboard</h1>
-          <div className="header-actions">
-            <button className="icon-btn">☀️</button>
-            <button className="icon-btn">🔔</button>
-            <div className="user-profile-icon">👤</div>
-          </div>
+          <DashboardHeaderActions />
         </div>
 
         <div className="certified-interviews-content">
           <div className="search-section">
             <div className="search-box">
-              <span className="search-icon">🔍</span>
+              <span className="search-icon"><FaSearch /></span>
               <input type="text" placeholder="Search across all fields..." />
             </div>
           </div>

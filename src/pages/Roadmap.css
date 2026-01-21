@@ -55,7 +55,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #8b5cf6;
+  background: var(--color-primary);
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -105,7 +105,7 @@
 }
 
 .roadmap-category-btn.active {
-  background: #00FF00;
+  background: var(--color-primary);
   color: #000000;
   font-weight: 600;
 }
@@ -155,7 +155,7 @@
 
 .topic-btn:hover {
   background: #2d2d2d;
-  border-color: #00FF00;
+  border-color: var(--color-primary);
 }
 
 @media (max-width: 1200px) {

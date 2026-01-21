@@ -38,12 +38,12 @@
   font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 204, 0, 0.3);
 }
 
 .btn-apply:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(255, 105, 180, 0.4);
+  box-shadow: 0 6px 20px rgba(0, 204, 0, 0.4);
 }
 
 .features-grid {
@@ -57,7 +57,7 @@
   background: white;
   padding: 2.5rem 2rem;
   border-radius: 20px;
-  box-shadow: 0 5px 20px rgba(255, 105, 180, 0.1);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   text-align: center;
   position: relative;
@@ -78,7 +78,7 @@
 
 .feature-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 10px 30px rgba(255, 105, 180, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 204, 0, 0.2);
 }
 
 .feature-card:hover::before {
@@ -126,14 +126,14 @@
   background: white;
   padding: 2.5rem 2rem;
   border-radius: 20px;
-  box-shadow: 0 5px 20px rgba(255, 105, 180, 0.1);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   text-align: center;
 }
 
 .benefit-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 10px 30px rgba(255, 105, 180, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 204, 0, 0.2);
 }
 
 .benefit-icon {
