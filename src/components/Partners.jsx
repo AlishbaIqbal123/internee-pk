@@ -26,14 +26,13 @@ const Partners = () => {
     };
   }, []);
 
-  // Placeholder for partner logos - in production, these would be actual images
   const partners = [
-    { name: 'Partner 1', logo: '🏢' },
-    { name: 'Partner 2', logo: '🏢' },
-    { name: 'Partner 3', logo: '🏢' },
-    { name: 'Partner 4', logo: '🏢' },
-    { name: 'Partner 5', logo: '🏢' },
-    { name: 'Partner 6', logo: '🏢' }
+    { name: 'Google Cloud', src: '/partners/google-cloud.png' },
+    { name: 'See Pakistan 2024', src: '/partners/see-pakistan-2024.png' },
+    { name: 'Microsoft for Startups Founders Hub', src: '/partners/founders-hub.png' },
+    { name: 'ITG', src: '/partners/itg.png' },
+    { name: 'National Expansion Plan of NICS', src: '/partners/nep-nics.png' },
+    { name: 'PITB', src: '/partners/pitb.png' }
   ];
 
   return (
@@ -50,8 +49,7 @@ const Partners = () => {
               className="partner-logo"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="logo-placeholder">{partner.logo}</div>
-              <span className="partner-name">{partner.name}</span>
+              <img className="partner-img" src={partner.src} alt={partner.name} loading="lazy" />
             </div>
           ))}
         </div>
