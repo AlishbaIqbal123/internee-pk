@@ -57,8 +57,6 @@ npm run dev
 
 ## Screenshots
 
-<img width="1919" height="964" alt="Screenshot 2026-01-22 002507" src="https://github.com/user-attachments/assets/20f2de19-f572-44fb-8b4a-58486c46351d" />
-<img width="1919" height="980" alt="Screenshot 2026-01-22 002524" src="https://github.com/user-attachments/assets/ca7a433d-0eb4-4be3-b4be-cb91dad79439" />
 <img width="1919" height="569" alt="Screenshot 2026-01-22 002548" src="https://github.com/user-attachments/assets/4f7ef3c0-0a98-4b6a-b5bb-d2c2b14311e0" />
 <img width="1181" height="892" alt="Screenshot 2026-01-22 004522" src="https://github.com/user-attachments/assets/99574b60-6af0-40e0-8fe2-b2bc4c8b6dd3" />
 <img width="1919" height="883" alt="Screenshot 2026-01-22 004613" src="https://github.com/user-attachments/assets/88bb9d0d-1731-4222-aa17-f9340cc9fafd" />
